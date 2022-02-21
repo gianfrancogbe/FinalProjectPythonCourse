@@ -1,0 +1,25 @@
+{% extends "ProyectoWebApp/base.html"%}
+
+{%load static %}
+
+{%block content %}
+
+    <h2 style="color:white;">Conocenos un poco más:</h2>
+    
+
+    {% for aboutme in aboutme %}
+
+<div><p>
+
+    <h2 style="color:white;">{{aboutme.titulo}}</h2>
+    <p style="color:white;">{{aboutme.contenido}}</p>
+    <p><img src="{{aboutme.imagen.url}}" style = "width: 10%" ></p>
+  
+
+</p></div>
+
+        
+    {% endfor %}
+
+
+{%endblock%}    

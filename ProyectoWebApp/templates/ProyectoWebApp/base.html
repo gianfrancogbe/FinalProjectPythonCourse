@@ -34,25 +34,23 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active px-lg-4">
+          <li class="nav-item {% if request.path == '/'%} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'inicio' %}">Inicio</a>
           </li>
-          <li class="nav-item px-lg-4">
+          <li class="nav-item {% if request.path == '/alquila' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'alquila' %}">Alquila</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'tienda' %}">Tienda</a>
+          <li class="nav-item {% if request.path == '/suscribete'%} active {% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'blog' %}">Blog</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'suscribete' %}">Suscribete</a>
-          </li>
-          <li class="nav-item px-lg-4">
+          <li class="nav-item {% if request.path == '/contacto'%} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'contacto' %}">Contacto</a>
           </li>
-         
+          <li class="nav-item {% if request.path == '/tienda' %} active {% endif %} px-lg-4">
+            <a class="nav-link text-uppercase text-expanded" href="{% url 'aboutme' %}">About Me</a>
+          </li>
         </ul>
       </div>
-    </div>
   </nav>
 
 <!-- Contenido cambiante-->
@@ -88,7 +86,7 @@
         	<a href="sample.html" class="link">Aviso legal</a> ·
         	<a href="sample.html" class="link">Cookies</a>
 		</p>
-        <p class="m-0 mbt1">&copy; Gestión de Pedidos 2020</p>
+        <p class="m-0 mbt1">&copy; Gestión de Pedidos 2022</p>
       </div>
 	</footer>
 
