@@ -1,0 +1,14 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <ul>
+        <li>Titulo del producto: {{alquila.titulo}}</li>
+        <li>Contenido: {{alquila.contenido}}</li>
+    </ul>
+    <p>
+        <a href='{% url 'productos' %}'>Regresar</a>
+    
+{% endblock %} 

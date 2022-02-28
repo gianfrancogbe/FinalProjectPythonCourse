@@ -1,0 +1,20 @@
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <h1>Autos en alquiler</h1>
+    <ul>
+        {% for producto in productos %}
+            <li>
+                <p>Nombre: {{producto.titulo}}</p>
+                <a href='{% url 'Detalle' producto.id %}' >Detalle</a>
+                <a href='{% url 'Actualizar' producto.id %}'>Actualizar</a>
+                <a href='{% url 'Borrar' producto.id %}'>Borrar</a>
+            </li>
+        {% endfor %}
+        <a href='{% url 'Crear' %}'>Crear</a>
+        
+    </ul>
+{% endblock %}

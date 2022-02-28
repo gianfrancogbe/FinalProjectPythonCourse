@@ -1,0 +1,17 @@
+
+{% extends 'ProyectoWebApp/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <form action='' method ='POST'>
+    {% csrf_token %}
+    <ul>
+        <li>Titulo del producto: {{alquila.titulo}}</li>
+        <li>Contenido: {{alquila.contenido}}</li>
+    </ul>
+    <input type='submit' value='Borrar'/>
+    </form>
+
+{% endblock %}

@@ -49,7 +49,13 @@
           <li class="nav-item {% if request.path == '/tienda' %} active {% endif %} px-lg-4">
             <a class="nav-link text-uppercase text-expanded" href="{% url 'aboutme' %}">About Me</a>
           </li>
+          
         </ul>
+        <a class='btn btn-primary' href='{% url 'Login' %}'>Login</a>
+        <a class='btn btn-primary' href='{% url 'Logout' %}'>Logout</a>
+        <a class='btn btn-primary' href='{% url 'Registro' %}'>Registro</a>
+
+
       </div>
   </nav>
 

@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from ProyectoWebApp.views import login_request, LogoutView, register, editar_perfil,ProductoListView, ProductoDetalle,ProductoDelete,ProductoNuevo,ProductoUpdate
 
 
 
@@ -24,5 +25,14 @@ urlpatterns = [
         path('contacto/', include('ContactoApp.urls')),
         path('aboutme/', include('AboutmeApp.urls')),
         path('blog/', include("BlogApp.urls")),
+        path('login', login_request, name = 'Login'),
+        path('logout', LogoutView.as_view(template_name='ProyectoWebApp/logout.html'), name = 'Logout'),
+        path('registro', register, name = 'Registro'),
+        path('edit/', editar_perfil, name='user_editar'),
+        path('list/', ProductoListView.as_view(template_name='ProyectoWebApp/producto_lista.html'),name='productos'),
+        path('detalle/<pk>', ProductoDetalle.as_view(),name = 'Detalle'),
+        path('nuevo/', ProductoNuevo.as_view(),name='Crear'),
+        path('update/<pk>', ProductoUpdate.as_view(), name='Actualizar'),
+        path('delete/<pk>', ProductoDelete.as_view(),name='Borrar'),
         path('', include('ProyectoWebApp.urls'))
 ]
